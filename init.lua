@@ -1,6 +1,8 @@
---              AstroNvim Configuration Table
-local config = {
+-- =======================================================
+-- ============ AstroNvim Configuration Table ============
+-- =======================================================
 
+local config = {
   -- Configure AstroNvim updates
   updater = {
     remote = "origin", -- remote to use
@@ -17,19 +19,14 @@ local config = {
 
   colorscheme = "catppuccin",
 
+  -- Set (n)vim options
   options = {
     opt = {
-      relativenumber = true, -- sets vim.opt.relativenumber
+      relativenumber = true,
     },
     g = {
-      mapleader = " ", -- sets vim.g.mapleader
+      mapleader = " ",
     },
-  },
-
-  -- Diagnostics configuration (for vim.diagnostics.config({...}))
-  diagnostics = {
-    virtual_text = true,
-    underline = true,
   },
 
   -- Extend LSP configuration
@@ -42,40 +39,11 @@ local config = {
         -- ["<leader>lf"] = false -- disable formatting keymap
       },
     },
-    -- add to the global LSP on_attach function
-    -- on_attach = function(client, bufnr)
-    -- end,
-
-    -- override the mason server-registration function
-    -- server_registration = function(server, opts)
-    --   require("lspconfig")[server].setup(opts)
-    -- end,
 
     -- Add overrides for LSP server settings, the keys are the name of the server
-    ["server-settings"] = {
-      -- example for addings schemas to yamlls
-      -- yamlls = { -- override table for require("lspconfig").yamlls.setup({...})
-      --   settings = {
-      --     yaml = {
-      --       schemas = {
-      --         ["http://json.schemastore.org/github-workflow"] = ".github/workflows/*.{yml,yaml}",
-      --         ["http://json.schemastore.org/github-action"] = ".github/action.{yml,yaml}",
-      --         ["http://json.schemastore.org/ansible-stable-2.9"] = "roles/tasks/*.{yml,yaml}",
-      --       },
-      --     },
-      --   },
-      -- },
-      -- Example disabling formatting for a specific language server
-      -- gopls = { -- override table for require("lspconfig").gopls.setup({...})
-      --   on_attach = function(client, bufnr)
-      --     client.resolved_capabilities.document_formatting = false
-      --   end
-      -- }
-    },
+    ["server-settings"] = {},
   },
 
-  -- Mapping data with "desc" stored directly by vim.keymap.set().
-  --
   -- Please use this mappings table to set keyboard mapping since this is the
   -- lower level configuration and more robust one. (which-key will
   -- automatically pick-up stored data by this setting.)
@@ -111,8 +79,8 @@ local config = {
               percentage = 0.15,
             },
             styles = {
-              comments = { "italic" },
-              conditionals = { "italic" },
+              comments = {},
+              conditionals = {},
               loops = {},
               functions = {},
               keywords = {},
@@ -137,19 +105,13 @@ local config = {
       on_attach = function() end,
     },
 
-    -- All other entries override the require("<key>").setup({...}) call for default plugins
-    ["null-ls"] = function(config) -- overrides `require("null-ls").setup(config)`
-      -- config variable is the default configuration table for the setup functino call
+    ["null-ls"] = function(config)
       local null_ls = require "null-ls"
-      -- Check supported formatters and linters
-      -- https://github.com/jose-elias-alvarez/null-ls.nvim/tree/main/lua/null-ls/builtins/formatting
-      -- https://github.com/jose-elias-alvarez/null-ls.nvim/tree/main/lua/null-ls/builtins/diagnostics
+
       config.sources = {
-        -- Set a formatter
         null_ls.builtins.formatting.stylua,
       }
-      -- set up null-ls's on_attach function
-      -- NOTE: You can remove this on attach function to disable format on save
+
       config.on_attach = function(client)
         if client.resolved_capabilities.document_formatting then
           vim.api.nvim_create_autocmd("BufWritePre", {
@@ -159,49 +121,29 @@ local config = {
           })
         end
       end
-      return config -- return final config table to use in require("null-ls").setup(config)
+      return config
     end,
 
-    treesitter = { -- overrides `require("treesitter").setup(...)`
+    treesitter = {
       ensure_installed = { "lua" },
+      rainbow = {
+        enable = false,
+      },
     },
 
-    -- use mason-lspconfig to configure LSP installations
-    ["mason-lspconfig"] = { -- overrides `require("mason-lspconfig").setup(...)`
+    ["mason-lspconfig"] = {
       ensure_installed = { "sumneko_lua" },
     },
 
-    -- use mason-tool-installer to configure DAP/Formatters/Linter installation
-    ["mason-tool-installer"] = { -- overrides `require("mason-tool-installer").setup(...)`
+    ["mason-tool-installer"] = {
       ensure_installed = { "stylua" },
     },
   },
 
-  -- CMP Source Priorities
-  -- modify here the priorities of default cmp sources
-  -- higher value == higher priority
-  -- The value can also be set to a boolean for disabling default sources:
-  -- false == disabled
-  -- true == 1000
-  cmp = {
-    source_priority = {
-      nvim_lsp = 1000,
-      luasnip = 750,
-      buffer = 500,
-      path = 250,
-    },
-  },
-
-  -- Modify which-key registration (Use this with mappings table in the above.)
   ["which-key"] = {
-    -- Add bindings which show up as group name
     register_mappings = {
-      -- first key is the mode, n == normal mode
       n = {
-        -- second key is the prefix, <leader> prefixes
         ["<leader>"] = {
-          -- third key is the key to bring up next level and its displayed
-          -- group name in which-key top level menu
           ["b"] = { name = "Buffer" },
         },
       },
@@ -212,8 +154,6 @@ local config = {
   -- augroups/autocommands and custom filetypes also this just pure lua so
   -- anything that doesn't fit in the normal config locations above can go here
   polish = function()
-    -- Set key binding
-    -- Set autocommands
     vim.api.nvim_create_augroup("packer_conf", { clear = true })
     vim.api.nvim_create_autocmd("BufWritePost", {
       desc = "Sync packer after modifying plugins.lua",
@@ -222,25 +162,11 @@ local config = {
       command = "source <afile> | PackerSync",
     })
 
-    -- autocmd BufWritePre *.tsx,*.ts,*.jsx,*.js EslintFixAll
     vim.api.nvim_create_autocmd("BufWritePost", {
       desc = "Fix all eslint errors",
       pattern = { "*.tsx", "*.ts", "*.jsx", "*.js" },
       command = "EslintFixAll",
     })
-
-    -- Set up custom filetypes
-    -- vim.filetype.add {
-    --   extension = {
-    --     foo = "fooscript",
-    --   },
-    --   filename = {
-    --     ["Foofile"] = "fooscript",
-    --   },
-    --   pattern = {
-    --     ["~/%.config/foo/.*"] = "fooscript",
-    --   },
-    -- }
   end,
 }
 
