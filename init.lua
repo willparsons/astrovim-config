@@ -17,7 +17,7 @@ local config = {
     auto_quit = false, -- automatically quit the current session after a successful update
   },
 
-  colorscheme = "catppuccin",
+  colorscheme = "gruvbox",
 
   -- Set (n)vim options
   options = {
@@ -97,6 +97,28 @@ local config = {
             integrations = {
               -- For various plugins integrations see https://github.com/catppuccin/nvim#integrations
             },
+          }
+        end,
+      },
+
+      {
+        "ellisonleao/gruvbox.nvim",
+        config = function()
+          require("gruvbox").setup {
+            undercurl = true,
+            underline = true,
+            bold = true,
+            italic = false,
+            strikethrough = true,
+            invert_selection = false,
+            invert_signs = false,
+            invert_tabline = false,
+            invert_intend_guides = false,
+            inverse = true, -- invert background for search, diffs, statuslines and errors
+            contrast = "", -- can be "hard", "soft" or empty string
+            overrides = {},
+            dim_inactive = false,
+            transparent_mode = true,
           }
         end,
       },
