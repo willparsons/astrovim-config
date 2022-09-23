@@ -42,6 +42,14 @@ local config = {
 
     -- Add overrides for LSP server settings, the keys are the name of the server
     ["server-settings"] = {},
+
+    -- Override on attach
+    on_attach = function(client, _)
+      -- Remove highlighting every instance of the word under the cursor
+      if client.resolved_capabilities.document_highlight then
+        vim.api.nvim_del_augroup_by_name "lsp_document_highlight"
+      end
+    end,
   },
 
   -- Please use this mappings table to set keyboard mapping since this is the
