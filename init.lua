@@ -23,6 +23,8 @@ local config = {
   options = {
     opt = {
       relativenumber = true,
+      shiftwidth = 4,
+      tabstop = 4,
     },
     g = {
       mapleader = " ",
