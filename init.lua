@@ -77,6 +77,7 @@ local config = {
   plugins = {
     init = {
       ["declancm/cinnamon.nvim"] = { disable = true },
+      ["akinsho/toggleterm.nvim"] = { disable = true },
 
       {
         "catppuccin/nvim",
