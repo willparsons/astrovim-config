@@ -17,7 +17,7 @@ local config = {
     auto_quit = false, -- automatically quit the current session after a successful update
   },
 
-  colorscheme = "gruvbox",
+  colorscheme = "everforest",
 
   -- Set (n)vim options
   options = {
@@ -128,6 +128,14 @@ local config = {
             dim_inactive = false,
             transparent_mode = true,
           }
+        end,
+      },
+
+      {
+        "sainnhe/everforest",
+        config = function()
+          vim.cmd [[let g:everforest_transparent_background=1]]
+          vim.cmd [[let g:everforest_background='soft']]
         end,
       },
     },
