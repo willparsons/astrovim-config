@@ -53,9 +53,10 @@ local config = {
         "catppuccin/nvim",
         as = "catppuccin",
         config = function()
-          require("catppuccin").setup {
-            transparent_background = true,
-            term_colors = true,
+          vim.g.catppuccin_flavour = "mocha" -- latte, frappe, macchiato, mocha
+          require("catppuccin").setup({
+            transparent_background = false,
+            term_colors = false,
             dim_inactive = {
               enabled = false,
               shade = "dark",
@@ -76,9 +77,16 @@ local config = {
               operators = {},
             },
             integrations = {
-              -- For various plugins integrations see https://github.com/catppuccin/nvim#integrations
+              cmp = true,
+              gitsigns = true,
+              nvimtree = true,
+              telescope = true,
+              treesitter = true,
+              -- For more plugins integrations please scroll down (https://github.com/catppuccin/nvim#integrations)
             },
-          }
+            color_overrides = {},
+            custom_highlights = {},
+          })
         end,
       },
     },
