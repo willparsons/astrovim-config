@@ -91,6 +91,19 @@ local config = {
       },
     },
 
+    alpha = function(config)
+      config.layout[#config.layout + 1] = {
+        type = "text",
+        val = {
+          ---@diagnostic disable-next-line: undefined-global
+          string.format(" Loaded %d plugins", vim.tbl_count(packer_plugins)),
+        },
+        opts = { position = "center", hl = "DashboardFooter" },
+      }
+
+      return config
+    end,
+
     treesitter = {
       ensure_installed = { "lua" },
       rainbow = {
