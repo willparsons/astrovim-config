@@ -12,6 +12,10 @@ local config = {
     auto_quit = false, -- automatically quit the current session after a successful update
   },
 
+  header = {
+    "neovim"
+  },
+
   colorscheme = "catppuccin",
 
   options = {
