@@ -53,7 +53,8 @@ local config = {
         "catppuccin/nvim",
         as = "catppuccin",
         config = function()
-          vim.g.catppuccin_flavour = "mocha" -- latte, frappe, macchiato, mocha
+          -- latte, frappe, macchiato, mocha (lightest -> darkest)
+          vim.g.catppuccin_flavour = "mocha"
           require("catppuccin").setup({
             transparent_background = false,
             term_colors = false,
