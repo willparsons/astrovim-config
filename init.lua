@@ -16,7 +16,7 @@ local config = {
     "neovim"
   },
 
-  colorscheme = "nordfox",
+  colorscheme = "nightfox",
 
   options = {
     opt = {
@@ -57,8 +57,6 @@ local config = {
           -- latte, frappe, macchiato, mocha (lightest -> darkest)
           vim.g.catppuccin_flavour = "mocha"
           require("catppuccin").setup({
-            transparent_background = true,
-            term_colors = false,
             styles = {
               comments = {},
               conditionals = {},
@@ -70,29 +68,9 @@ local config = {
       {
         "EdenEast/nightfox.nvim",
         config = function()
-          -- Default options
-          require('nightfox').setup({
-            options = {
-              -- Compiled file's destination location
-              transparent = false, -- Disable setting background
-              terminal_colors = true, -- Set terminal colors (vim.g.terminal_color_*) used in `:terminal`
-              dim_inactive = false, -- Non focused panes set to alternative background
-              inverse = { -- Inverse highlight for different types
-                match_paren = false,
-                visual = false,
-                search = false,
-              },
-              modules = { -- List of various plugins and additional options
-                -- ...
-              },
-            },
-            palettes = {},
-            specs = {},
-            groups = {},
-          })
+          require('nightfox').setup({})
         end
-      }
-
+      },
     },
 
     alpha = function(config)
