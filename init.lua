@@ -16,13 +16,13 @@ local config = {
     "neovim"
   },
 
-  colorscheme = "nightfox",
+  colorscheme = "material",
 
   options = {
     opt = {
       shiftwidth = 4,
       tabstop = 4,
-      spell = true,
+      spell = false,
     },
     g = {},
   },
@@ -66,11 +66,23 @@ local config = {
       },
 
       {
-        "EdenEast/nightfox.nvim",
+        "marko-cerovac/material.nvim",
         config = function()
-          require('nightfox').setup({})
+          require('material').setup({
+            plugins = {
+              "dashboard",
+              "gitsigns",
+              "indent-blankline",
+              "nvim-cmp",
+              "telescope",
+              "which-key",
+            },
+
+            async_loading = true, -- Load parts of the theme asyncronously for faster startup (turned on by default)
+          })
+          vim.g.material_style = "darker"
         end
-      },
+      }
     },
 
     alpha = function(config)
