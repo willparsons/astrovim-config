@@ -16,7 +16,7 @@ local config = {
     "neovim"
   },
 
-  colorscheme = "material",
+  colorscheme = "everforest",
 
   options = {
     opt = {
@@ -66,23 +66,14 @@ local config = {
       },
 
       {
-        "marko-cerovac/material.nvim",
+        "neanias/everforest-nvim",
         config = function()
-          require('material').setup({
-            plugins = {
-              "dashboard",
-              "gitsigns",
-              "indent-blankline",
-              "nvim-cmp",
-              "telescope",
-              "which-key",
-            },
-
-            async_loading = true, -- Load parts of the theme asyncronously for faster startup (turned on by default)
+          require("everforest").setup({
+            background = "hard",
           })
-          vim.g.material_style = "darker"
         end
       }
+
     },
 
     alpha = function(config)
@@ -114,7 +105,7 @@ local config = {
     register_mappings = {
       n = {
         ["<leader>"] = {
-          ["b"] = { name = "Buffer" },
+          b = { name = "Buffer" },
         },
       },
     },
