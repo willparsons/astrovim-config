@@ -72,6 +72,17 @@ local config = {
             background = "hard",
           })
         end
+      },
+
+      {
+        "xiyaowong/nvim-transparent",
+        config = function()
+          require("transparent").setup({
+            enable = true,
+            extra_groups = "all",
+            exclude = {},
+          })
+        end
       }
 
     },
