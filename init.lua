@@ -70,6 +70,7 @@ local config = {
         config = function()
           require("everforest").setup({
             background = "hard",
+            transparent_background_level = 2
           })
         end
       },
@@ -78,7 +79,7 @@ local config = {
         "xiyaowong/nvim-transparent",
         config = function()
           require("transparent").setup({
-            enable = true,
+            enable = false,
             extra_groups = "all",
             exclude = {},
           })
@@ -123,18 +124,28 @@ local config = {
   },
 
   polish = function()
+    vim.api.nvim_create_augroup("Will", {})
+    vim.api.nvim_create_augroup("YankHighlight", { clear = true })
+
     vim.api.nvim_create_autocmd("BufWritePost", {
       desc = "Fix all eslint errors",
       pattern = { "*.tsx", "*.ts", "*.jsx", "*.js" },
       command = "EslintFixAll",
+      group = "Will",
     })
 
-    vim.api.nvim_create_augroup("YankHighlight", { clear = true })
     vim.api.nvim_create_autocmd("TextYankPost", {
       callback = function() vim.highlight.on_yank() end,
-      group = "YankHighlight",
       pattern = "*",
+      group = "YankHighlight",
     })
+
+    vim.api.nvim_create_autocmd("BufWritePre", {
+      pattern = "*",
+      command = "%s/\\s\\+$//e",
+      group = "Will",
+    })
+
   end,
 }
 
