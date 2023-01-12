@@ -84,7 +84,20 @@ local config = {
             exclude = {},
           })
         end
+      },
+
+      {
+        "Yazeed1s/minimal.nvim"
+      },
+
+      {
+        'ramojus/mellifluous.nvim',
+        requires = { 'rktjmp/lush.nvim' },
+        config = function()
+          require 'mellifluous'.setup({ --[[...]] }) -- optional, see configuration section.
+        end
       }
+
 
     },
 
