@@ -16,7 +16,7 @@ local config = {
     "neovim"
   },
 
-  colorscheme = "everforest",
+  colorscheme = "mellifluous",
 
   options = {
     opt = {
@@ -91,14 +91,12 @@ local config = {
       },
 
       {
-        'ramojus/mellifluous.nvim',
-        requires = { 'rktjmp/lush.nvim' },
+        "ramojus/mellifluous.nvim",
+        requires = { "rktjmp/lush.nvim" },
         config = function()
-          require 'mellifluous'.setup({ --[[...]] }) -- optional, see configuration section.
+          require("mellifluous").setup()
         end
-      }
-
-
+      },
     },
 
     alpha = function(config)
