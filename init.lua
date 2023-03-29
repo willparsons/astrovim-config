@@ -2,7 +2,7 @@ return {
   updater = {
     branch = "main",
   },
-  colorscheme = "mellifluous",
+  colorscheme = "catppuccin",
   polish = function()
     vim.api.nvim_create_augroup("Will", {})
     vim.api.nvim_create_augroup("YankHighlight", { clear = true })
