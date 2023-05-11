@@ -1,10 +1,12 @@
 return {
     {
-        "ramojus/mellifluous.nvim",
-        dependencies = { "rktjmp/lush.nvim" },
+        "Mofiqul/vscode.nvim",
         lazy = false,
         config = function()
-            require("mellifluous").setup()
-        end
-    },
+            require('vscode').setup({
+                transparent = true,
+                italic_comments = false,
+            })
+        end,
+    }
 };

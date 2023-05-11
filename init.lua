@@ -2,10 +2,9 @@ return {
   updater = {
     branch = "main",
   },
-  colorscheme = "catppuccin",
+  colorscheme = "vscode",
   polish = function()
-    vim.api.nvim_create_augroup("Will", {})
-    vim.api.nvim_create_augroup("YankHighlight", { clear = true })
+    vim.api.nvim_create_augroup("Will", { clear = true })
 
     vim.api.nvim_create_autocmd("BufWritePost", {
       desc = "Fix all eslint errors",
@@ -17,7 +16,7 @@ return {
     vim.api.nvim_create_autocmd("TextYankPost", {
       callback = function() vim.highlight.on_yank() end,
       pattern = "*",
-      group = "YankHighlight",
+      group = "Will",
     })
 
     vim.api.nvim_create_autocmd("BufWritePre", {
