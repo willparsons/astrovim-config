@@ -8,4 +8,11 @@ return {
       return opts
     end,
   },
+
+  {
+    "max397574/better-escape.nvim",
+    opts = {
+      mapping = {"jk"}
+    }
+  }
 }
