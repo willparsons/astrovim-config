@@ -2,7 +2,7 @@ return {
   updater = {
     branch = "main",
   },
-  colorscheme = "vscode",
+  colorscheme = "onedark",
   polish = function()
     vim.api.nvim_create_augroup("Will", { clear = true })
 
