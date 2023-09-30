@@ -1,14 +1,16 @@
 return function()
   vim.api.nvim_create_augroup("Will", { clear = true })
 
-  vim.api.nvim_create_autocmd("BufWritePost", {
-    desc = "Fix all eslint errors",
-    pattern = { "*.tsx", "*.ts", "*.jsx", "*.js" },
-    group = "Will",
-    callback = function()
-      if vim.fn.exists ":EslintFixAll" > 0 then vim.cmd "EslintFixAll" end
-    end,
-  })
+  -- commenting this out for now
+  -- I think this is really expensive and doing it on every write is annoying
+  -- vim.api.nvim_create_autocmd("BufWritePost", {
+  --   desc = "Fix all eslint errors",
+  --   pattern = { "*.tsx", "*.ts", "*.jsx", "*.js" },
+  --   group = "Will",
+  --   callback = function()
+  --     if vim.fn.exists ":EslintFixAll" > 0 then vim.cmd "EslintFixAll" end
+  --   end,
+  -- })
 
   -- highlight on yank
   vim.api.nvim_create_autocmd("TextYankPost", {
