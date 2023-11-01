@@ -35,4 +35,10 @@ return {
     "onedarkpro.nvim",
     lazy = false,
   },
+
+  -- the typescript pack adds this but I'd rather not have it
+  {
+    "vuki656/package-info.nvim",
+    enabled = false,
+  },
 }
