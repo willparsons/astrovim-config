@@ -3,7 +3,7 @@ return {
     "goolord/alpha-nvim",
     opts = function(_, opts)
       opts.section.header.val = {
-        "neovim"
+        "neovim",
       }
       return opts
     end,
@@ -12,7 +12,7 @@ return {
   {
     "max397574/better-escape.nvim",
     opts = {
-      mapping = {"jk"}
-    }
-  }
+      mapping = { "jk" },
+    },
+  },
 }
