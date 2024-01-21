@@ -2,5 +2,5 @@ return {
   updater = {
     branch = "main",
   },
-  colorscheme = "kanagawa-dragon",
+  colorscheme = "nordic",
 }
