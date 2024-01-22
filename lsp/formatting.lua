@@ -4,5 +4,6 @@ return {
     "tsserver",
     "jsonls",
     "pyright",
+    "eslint",
   },
 }
