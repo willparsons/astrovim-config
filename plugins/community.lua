@@ -4,13 +4,13 @@ return {
   -- imports
   { import = "astrocommunity.colorscheme.catppuccin" },
   { import = "astrocommunity.colorscheme.kanagawa-nvim" },
-  { import = "astrocommunity.colorscheme.onedarkpro-nvim" },
-  { import = "astrocommunity.colorscheme.nordic-nvim" },
   { import = "astrocommunity.pack.typescript" },
 
   -- config
   {
     "kanagawa.nvim",
+    lazy = false,
+    priority = 1000,
     opts = {
       commentStyle = { italic = false },
       keywordStyle = { italic = false },
