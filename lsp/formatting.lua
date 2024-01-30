@@ -5,5 +5,6 @@ return {
     "jsonls",
     "pyright",
     "eslint",
+    "yamlls",
   },
 }
