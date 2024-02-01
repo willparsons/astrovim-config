@@ -5,7 +5,7 @@ return {
       timeout = 500,
       stages = "fade",
       render = "wrapped-compact",
-      max_width = 50,
+      max_width = 80,
       max_height = 100,
     },
   },
