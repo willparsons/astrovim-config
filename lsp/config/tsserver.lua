@@ -1,7 +1,7 @@
 return {
-  init_options = {
-    preferences = {
-      importModuleSpecifierPreference = "relative",
-    },
-  },
+  -- init_options = {
+  --   preferences = {
+  --     importModuleSpecifierPreference = "relative",
+  --   },
+  -- },
 }
