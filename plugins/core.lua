@@ -15,24 +15,4 @@ return {
       mapping = { "jk" },
     },
   },
-
-  {
-    "nvim-treesitter/nvim-treesitter",
-    opts = {
-      ensure_installed = {
-        "css",
-        "dockerfile",
-        "graphql",
-        "html",
-        "javascript",
-        "jsdoc",
-        "json",
-        "make",
-        "rust",
-        "tsx",
-        "typescript",
-        "yaml",
-      },
-    },
-  },
 }
