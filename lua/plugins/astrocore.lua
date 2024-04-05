@@ -32,11 +32,11 @@ return {
         },
         ["<Leader>b"] = { desc = "Buffers" },
         ["<Tab>"] = {
-          function() require("astronvim.utils.buffer").nav(vim.v.count > 0 and vim.v.count or 1) end,
+          function() require("astrocore.buffer").nav(vim.v.count1) end,
           desc = "Next buffer",
         },
         ["<S-Tab>"] = {
-          function() require("astronvim.utils.buffer").nav(-(vim.v.count > 0 and vim.v.count or 1)) end,
+          function() require("astrocore.buffer").nav(-vim.v.count1) end,
           desc = "Previous buffer",
         },
       },
