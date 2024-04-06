@@ -1,3 +1,5 @@
+if true then return {} end
+
 local utils = require "astronvim.utils"
 
 local function on_file_remove(args)

@@ -1,10 +1,8 @@
+---@type LazySpec
 return {
-  {
-    "nvim-treesitter/nvim-treesitter",
-    opts = {
-      -- this only works if the tree-sitter cli is installed
-      auto_install = true,
-      ensure_installed = {
+  "nvim-treesitter/nvim-treesitter",
+  opts = function(_, opts)
+    opts.ensure_installed = require("astrocore").list_insert_unique(opts.ensure_installed, {
         "css",
         "dockerfile",
         "graphql",
@@ -17,7 +15,8 @@ return {
         "tsx",
         "typescript",
         "yaml",
-      },
-    },
-  },
+        "lua",
+        "vim"
+    })
+  end,
 }
