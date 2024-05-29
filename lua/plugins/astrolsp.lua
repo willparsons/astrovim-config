@@ -33,7 +33,7 @@ return {
         "pyright",
         "eslint",
         "yamlls",
-        "typescript-tools",
+        "vtsls",
       },
     },
     servers = {
