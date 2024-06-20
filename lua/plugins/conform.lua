@@ -4,6 +4,10 @@ return {
     formatters_by_ft = {
       yaml = { "prettierd" },
       lua = { "stylua" },
+      markdown = { "prettierd" },
+      html = { "prettierd" },
+      css = { "prettierd" },
+      graphql = { "prettierd" },
     },
   },
 }
