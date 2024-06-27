@@ -62,6 +62,20 @@ return {
       biome = {
         cmd = biome_cmd(),
       },
+      vtsls = {
+        settings = {
+          javascript = {
+            preferences = {
+              importModuleSpecifier = "non-relative",
+            },
+          },
+          typescript = {
+            preferences = {
+              importModuleSpecifier = "non-relative",
+            },
+          },
+        },
+      },
     },
     -- Configure buffer local auto commands to add when attaching a language server
     autocmds = {
