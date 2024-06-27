@@ -14,15 +14,19 @@ vim.api.nvim_create_autocmd("BufWritePre", {
   group = "Will",
 })
 
-vim.g.clipboard = {
-  name = "win32yank",
-  copy = {
-    ["+"] = "win32yank.exe -i --crlf",
-    ["*"] = "win32yank.exe -i --crlf",
-  },
-  paste = {
-    ["+"] = "win32yank.exe -o --lf",
-    ["*"] = "win32yank.exe -o --lf",
-  },
-  cache_enabled = false,
-}
+local sysname = vim.loop.os_uname().sysname
+
+if sysname ~= "Darwin" then
+  vim.g.clipboard = {
+    name = "win32yank",
+    copy = {
+      ["+"] = "win32yank.exe -i --crlf",
+      ["*"] = "win32yank.exe -i --crlf",
+    },
+    paste = {
+      ["+"] = "win32yank.exe -o --lf",
+      ["*"] = "win32yank.exe -o --lf",
+    },
+    cache_enabled = false,
+  }
+end
