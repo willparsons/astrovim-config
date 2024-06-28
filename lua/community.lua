@@ -2,6 +2,8 @@
 return {
   "AstroNvim/astrocommunity",
   { import = "astrocommunity.pack.typescript" },
+  { import = "astrocommunity.pack.python-ruff" },
+  { import = "astrocommunity.lsp.nvim-lint" },
   { import = "astrocommunity.editing-support.conform-nvim" },
   { import = "astrocommunity.recipes.telescope-lsp-mappings" },
 
