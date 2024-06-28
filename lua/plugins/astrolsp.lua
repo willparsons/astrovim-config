@@ -64,6 +64,9 @@ return {
       },
       vtsls = {
         settings = {
+          vtsls = {
+            autoUseWorkspaceTsdk = true,
+          },
           javascript = {
             preferences = {
               importModuleSpecifier = "non-relative",
