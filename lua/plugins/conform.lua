@@ -8,6 +8,8 @@ return {
       html = { "prettierd" },
       css = { "prettierd" },
       graphql = { "prettierd" },
+      json = { "prettierd" },
+      jsonc = { "prettierd" },
     },
   },
 }
