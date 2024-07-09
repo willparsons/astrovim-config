@@ -11,6 +11,13 @@ return {
   },
 
   {
+    "max397574/better-escape.nvim",
+    opts = {
+      mapping = { "jk" },
+    },
+  },
+
+  {
     "rebelot/kanagawa.nvim",
     lazy = false,
     priority = 1000,
