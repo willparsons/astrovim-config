@@ -7,7 +7,7 @@ return {
       opt = {
         relativenumber = true,
         number = true,
-        spell = false,
+        spell = true,
         signcolumn = "auto",
         wrap = false,
         shiftwidth = 4,
