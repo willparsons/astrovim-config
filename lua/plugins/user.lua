@@ -52,13 +52,11 @@ return {
   {
     "max397574/better-escape.nvim",
     config = function()
-      -- lua, default settings
       require("better_escape").setup {
         default_mappings = false,
         mappings = {
           i = {
             j = {
-              -- These can all also be functions
               k = "<Esc>",
             },
           },
