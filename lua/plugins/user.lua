@@ -11,11 +11,6 @@ return {
   },
 
   {
-    "max397574/better-escape.nvim",
-    config = function() require("better_escape").setup() end,
-  },
-
-  {
     "rebelot/kanagawa.nvim",
     lazy = false,
     priority = 1000,
