@@ -1,8 +1,10 @@
 ---@type LazySpec
 return {
   "AstroNvim/astrocommunity",
-  { import = "astrocommunity.pack.typescript" },
+  { import = "astrocommunity.pack.typescript-all-in-one" },
   { import = "astrocommunity.pack.python-ruff" },
+  { import = "astrocommunity.pack.go" },
+  { import = "astrocommunity.pack.gleam" },
   { import = "astrocommunity.lsp.nvim-lint" },
   { import = "astrocommunity.editing-support.conform-nvim" },
   { import = "astrocommunity.recipes.telescope-lsp-mappings" },
