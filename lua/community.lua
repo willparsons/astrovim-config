@@ -4,6 +4,7 @@ return {
   { import = "astrocommunity.pack.typescript-all-in-one" },
   { import = "astrocommunity.pack.python-ruff" },
   { import = "astrocommunity.pack.go" },
+  { import = "astrocommunity.pack.templ" },
   { import = "astrocommunity.pack.gleam" },
   { import = "astrocommunity.lsp.nvim-lint" },
   { import = "astrocommunity.editing-support.conform-nvim" },
