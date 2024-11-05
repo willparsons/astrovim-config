@@ -19,6 +19,7 @@ return {
     },
     features = {
       signature_help = true,
+      inlay_hints = true,
     },
     ---@diagnostic disable: missing-fields
     config = {
