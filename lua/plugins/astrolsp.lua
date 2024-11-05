@@ -17,6 +17,9 @@ return {
         "vtsls",
       },
     },
+    features = {
+      signature_help = true,
+    },
     ---@diagnostic disable: missing-fields
     config = {
       eslint = {
