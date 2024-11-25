@@ -13,6 +13,7 @@ return {
         shiftwidth = 4,
         tabstop = 4,
         scrolloff = 8,
+        cursorcolumn = true,
       },
     },
     mappings = {
