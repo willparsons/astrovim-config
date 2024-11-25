@@ -7,6 +7,7 @@ return {
   { import = "astrocommunity.pack.templ" },
   { import = "astrocommunity.pack.gleam" },
   { import = "astrocommunity.pack.rust" },
+  { import = "astrocommunity.pack.astro" },
   { import = "astrocommunity.colorscheme.catppuccin" },
   { import = "astrocommunity.lsp.nvim-lint" },
   { import = "astrocommunity.editing-support.conform-nvim" },
