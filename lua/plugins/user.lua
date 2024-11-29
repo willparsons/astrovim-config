@@ -12,7 +12,7 @@ return {
 
   {
     "rebelot/kanagawa.nvim",
-    lazy = false,
+    lazy = true,
     priority = 1000,
   },
 
@@ -36,7 +36,7 @@ return {
 
   {
     "sainnhe/gruvbox-material",
-    lazy = false,
+    lazy = true,
     priority = 1000,
     config = function()
       vim.g.gruvbox_material_background = "hard"
