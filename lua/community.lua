@@ -9,6 +9,7 @@ return {
   { import = "astrocommunity.pack.rust" },
   { import = "astrocommunity.pack.astro" },
   { import = "astrocommunity.colorscheme.catppuccin" },
+  { import = "astrocommunity.colorscheme.github-nvim-theme" },
   { import = "astrocommunity.lsp.nvim-lint" },
   { import = "astrocommunity.editing-support.conform-nvim" },
   { import = "astrocommunity.recipes.telescope-lsp-mappings" },
@@ -23,5 +24,20 @@ return {
     "catppuccin/nvim",
     lazy = false,
     priority = 1000,
+  },
+
+  {
+    "projekt0n/github-nvim-theme",
+    priority = 1000,
+
+    config = function()
+      require("github-theme").setup {
+        groups = {
+          all = {
+            StatusLine = { fg = "fg2", bg = "bg1" },
+          },
+        },
+      }
+    end,
   },
 }
