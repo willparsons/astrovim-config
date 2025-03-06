@@ -1,3 +1,5 @@
+local util = require "lspconfig.util"
+
 ---@type LazySpec
 return {
   "AstroNvim/astrolsp",
@@ -19,6 +21,9 @@ return {
     },
     features = {
       signature_help = true,
+    },
+    servers = {
+      "gdscript",
     },
     ---@diagnostic disable: missing-fields
     config = {
@@ -44,6 +49,11 @@ return {
             },
           },
         },
+      },
+      gdscript = {
+        cmd = { "/home/will/godot-wsl-lsp/bin/godot-wsl-lsp", "--useMirroredNetworking" },
+        filetypes = { "gd", "gdscript", "gdscript3" },
+        root_dir = util.root_pattern("project.godot", ".git"),
       },
     },
     autocmds = {
