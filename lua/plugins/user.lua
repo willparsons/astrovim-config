@@ -1,16 +1,6 @@
 ---@type LazySpec
 return {
   {
-    "goolord/alpha-nvim",
-    opts = function(_, opts)
-      opts.section.header.val = {
-        "neovim",
-      }
-      return opts
-    end,
-  },
-
-  {
     "rebelot/kanagawa.nvim",
     lazy = true,
     priority = 1000,

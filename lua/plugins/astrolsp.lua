@@ -1,5 +1,3 @@
-local util = require "lspconfig.util"
-
 ---@type LazySpec
 return {
   "AstroNvim/astrolsp",
@@ -53,7 +51,7 @@ return {
       gdscript = {
         cmd = { "/home/will/godot-wsl-lsp/bin/godot-wsl-lsp", "--useMirroredNetworking" },
         filetypes = { "gd", "gdscript", "gdscript3" },
-        root_dir = util.root_pattern("project.godot", ".git"),
+        root_dir = require("lspconfig.util").root_pattern("project.godot", ".git"),
       },
     },
     autocmds = {
